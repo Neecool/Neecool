@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile-name {
+            font-size: 1em;
+            color: white;
+        }
+
+        /* Profile dropdown */
+        .profile-section {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 220px;
+            z-index: 10;
+        }
+
+        .profile-section img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .profile-section h3, .profile-section p {
+            text-align: center;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .form-container {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            color: #343a40;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #343a40;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form input {
+            height: 40px;
+        }
+
+        form textarea {
+            height: 60px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .tools-container {
+            flex: 3;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-card {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-card span {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Devotee's Tools Manager</h1>
+        <!-- Profile section in header -->
+        <div class="profile" id="profileBtn">
+            <img src="https://via.placeholder.com/40" alt="Profile Picture">
+            <span class="profile-name">Mr. Devotee</span>
+        </div>
+        <!-- Profile dropdown -->
+        <div class="profile-section" id="profileSection">
+            <img src="https://via.placeholder.com/60" alt="Profile Picture">
+            <h3>Mr. Devotee</h3>
+            <p>Mr.devotee1@gmail.com</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Add a New Tool</h2>
+            <form id="toolForm">
+                <label for="toolName">Tool Name:</label>
+                <input type="text" id="toolName" required>
+
+                <label for="toolDescription">Description:</label>
+                <textarea id="toolDescription" required></textarea>
+
+                <button type="submit">Add Tool</button>
+            </form>
+        </div>
+
+        <div class="tools-container">
+            <h2>Tools List</h2>
+            <input type="text" id="searchBox" placeholder="Search tools...">
+            <div class="tools-list" id="toolsList">
+                <!-- Added tools will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("toolForm");
+            const toolsList = document.getElementById("toolsList");
+            const searchBox = document.getElementById("searchBox");
+
+            const profileBtn = document.getElementById("profileBtn");
+            const profileSection = document.getElementById("profileSection");
+
+            // Load saved tools on page load
+            loadTools();
+
+            // Form submission event
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const toolName = document.getElementById("toolName").value;
+                const toolDescription = document.getElementById("toolDescription").value;
+
+                if (toolName && toolDescription) {
+                    addTool(toolName, toolDescription);
+                    saveTool(toolName, toolDescription);
+                    form.reset(); // Clear form after submission
+                }
+            });
+
+            // Search tools event
+            searchBox.addEventListener("input", function() {
+                const searchTerm = searchBox.value.toLowerCase();
+                const tools = document.querySelectorAll(".tool-card");
+
+                tools.forEach(tool => {
+                    const toolText = tool.textContent.toLowerCase();
+                    if (toolText.includes(searchTerm)) {
+                        tool.style.display = "";
+                    } else {
+                        tool.style.display = "none";
+                    }
+                });
+            });
+
+            // Add tool to the list
+            function addTool(name, description) {
+                const toolCard = document.createElement("div");
+                toolCard.classList.add("tool-card");
+                toolCard.innerHTML = `<span>${name}</span>: ${description}`;
+                toolsList.appendChild(toolCard);
+            }
+
+            // Save tool to local storage
+            function saveTool(name, description) {
+                const tools = JSON.parse(localStorage.getItem("tools")) || [];
+                tools.push({ name, description });
+                localStorage.setItem("tools", JSON.stringify(tools));
+            }
+
+            // Load tools from local storage
+            function loadTools() {
+                const tools = JSON.parse(localStorage.getItem("tools")) || [];
+                tools.forEach(tool => addTool(tool.name, tool.description));
+            }
+
+            // Show or hide the profile section
+            profileBtn.addEventListener("click", function(event) {
+                event.stopPropagation(); // Prevent event bubbling
+                profileSection.style.display = profileSection.style.display === "none" || !profileSection.style.display ? "block" : "none";
+            });
+
+            // Hide profile section when clicking outside of it
+            document.addEventListener("click", function(event) {
+                if (!profileSection.contains(event.target) && !profileBtn.contains(event.target)) {
+                    profileSection.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
