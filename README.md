@@ -1,17 +1,17 @@
 # 💫 About Me:
 I am Nikul Suthar, a Cybersecurity student with a strong focus on Cyber Crime Investigation and digital intelligence analysis. I am developing a structured, evidence-based investigative approach to identify, analyze, and document cybercrimes in a professional and methodical manner.<br><br>
 
-#🔎 My core investigation areas include:<br><br>
-Cyber fraud detection and scam pattern analysis<br>
-Phishing and social engineering investigation<br>
-Open-Source Intelligence (OSINT) investigations<br>
-Phone number OSINT analysis<br>
-Email intelligence and breach analysis<br>
-SOCMINT (Social Media Intelligence) investigations<br>
-IMGMINT (Image Intelligence) and reverse image analysis<br>
-Digital footprint tracing and online identity mapping<br>
-Username tracking and cross-platform profiling<br>
-Vulnerability assessment and structured investigative reporting<br><br>
+<b>🔎 My core investigation areas include:<b><br><br>
+• Cyber fraud detection and scam pattern analysis<br>
+• Phishing and social engineering investigation<br>
+• Open-Source Intelligence (OSINT) investigations<br>
+• Phone number OSINT analysis<br>
+• Email intelligence and breach analysis<br>
+• SOCMINT (Social Media Intelligence) investigations<br>
+• IMGMINT (Image Intelligence) and reverse image analysis<br>
+• Digital footprint tracing and online identity mapping<br>
+• Username tracking and cross-platform profiling<br>
+• Vulnerability assessment and structured investigative reporting<br><br>
 
 🤝 I’m looking for help with<br>
 Enhancing my coding skills and developing advanced AI-assisted cybersecurity investigation tools.<br><br>
