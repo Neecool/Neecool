@@ -1,5 +1,30 @@
 # 💫 About Me:
-🔭 I’m currently working on  <br>Cybersecurity awareness tools, OSINT projects, and my personal cybersecurity portfolio website.<br><br>👯 I’m looking to collaborate on  <br>Cybersecurity awareness projects, OSINT research, and beginner-friendly security tools.<br><br>🤝 I’m looking for help with  <br>Improving my coding skills and building advanced AI-based cybersecurity tools.<br><br>🌱 I’m currently learning  <br>Ethical hacking, OSINT investigation techniques, database security, and Kali Linux tools.<br><br>💬 Ask me about  <br>Cybersecurity basics, OSINT tools, scam detection, and ethical hacking learning paths.<br><br>⚡ Fun fact  <br>I enjoy turning public data into intelligence insights and I also love playing musical instruments.<br>
+I am Nikul Suthar, a Cybersecurity student with a strong focus on Cyber Crime Investigation and digital intelligence analysis. I am developing a structured, evidence-based investigative approach to identify, analyze, and document cybercrimes in a professional and methodical manner.<br><br>
+
+🔎 My core investigation areas include:<br>
+Cyber fraud detection and scam pattern analysis<br>
+Phishing and social engineering investigation<br>
+Open-Source Intelligence (OSINT) investigations<br>
+Phone number OSINT analysis<br>
+Email intelligence and breach analysis<br>
+SOCMINT (Social Media Intelligence) investigations<br>
+IMGMINT (Image Intelligence) and reverse image analysis<br>
+Digital footprint tracing and online identity mapping<br>
+Username tracking and cross-platform profiling<br>
+Vulnerability assessment and structured investigative reporting<br><br>
+
+🤝 I’m looking for help with<br>
+Enhancing my coding skills and developing advanced AI-assisted cybersecurity investigation tools.<br><br>
+
+🌱 I’m currently learning<br>
+Ethical hacking, OSINT investigation techniques, database security, digital forensics fundamentals, and Kali Linux tools.<br><br>
+
+💬 Ask me about<br>
+Cybercrime investigation basics, OSINT methodologies, scam detection strategies, and cybersecurity learning pathways.<br><br>
+
+⚡ Fun fact<br>
+I enjoy transforming publicly available data into actionable intelligence insights, and I also have a passion for playing musical instruments.<br>
+
 
 
 ## 🌐 Socials:
