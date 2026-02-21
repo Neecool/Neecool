@@ -1,7 +1,7 @@
 # 💫 About Me:
 I am Nikul Suthar, a Cybersecurity student with a strong focus on Cyber Crime Investigation and digital intelligence analysis. I am developing a structured, evidence-based investigative approach to identify, analyze, and document cybercrimes in a professional and methodical manner.<br><br>
 
-🔎 My core investigation areas include:<br>
+#🔎 My core investigation areas include:<br><br>
 Cyber fraud detection and scam pattern analysis<br>
 Phishing and social engineering investigation<br>
 Open-Source Intelligence (OSINT) investigations<br>
